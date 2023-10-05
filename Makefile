@@ -1,6 +1,10 @@
-prog1: main.c
-	gcc main.c -o prog1
+CC = gcc
+CFLAGS = -Wall -std=c99
 
-prog2: main2.c
-	gcc main2.c -o prog2
+all: process_lab
 
+process_lab: processes_lab.c
+	$(CC) $(CFLAGS) -o process_lab processes_lab.c
+
+clean:
+	rm -f process_lab
